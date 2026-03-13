@@ -21,5 +21,5 @@ def main():
 if __name__ == "__main__":
     main()
 
-# There will not be any asserts bjust try to run program
+# There will not be any asserts just try to run program
 
