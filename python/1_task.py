@@ -3,7 +3,8 @@
 TASK 1: The Galactic Welcome
 ----------------------------------------------------------
 Objective: Create a program that greets a space traveler.
-Author: Environment: i3wm + Neovim
+Author: NikolajDev
+Environment: i3wm + Neovim
 ==========================================================
 """
 
@@ -20,4 +21,5 @@ def main():
 if __name__ == "__main__":
     main()
 
+# There will not be any asserts bjust try to run program
 
