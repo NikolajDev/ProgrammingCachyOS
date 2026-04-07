@@ -1,0 +1,1 @@
+mnoz.remove(prvok)        # mutable

@@ -1,0 +1,5 @@
+obr1 = Image.open('prasiatko.png')
+obr2 = obr1.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
+obr3 = Image.new('RGB', (obr1.width+obr2.width, obr1.height))
+obr3.paste(obr2, (0, 0))
+obr3.paste(obr1, (obr1.width, 0))

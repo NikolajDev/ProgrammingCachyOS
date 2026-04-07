@@ -1,0 +1,1 @@
+canvas.create_line(x, y, x1, y1, fill=farba, width=30)

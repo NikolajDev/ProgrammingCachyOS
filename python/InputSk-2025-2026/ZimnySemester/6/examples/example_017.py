@@ -1,0 +1,1 @@
+abc[-5] == abc[len(abc)-5]

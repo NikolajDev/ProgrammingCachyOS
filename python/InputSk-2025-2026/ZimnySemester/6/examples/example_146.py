@@ -1,0 +1,1 @@
+>>> open('subor2.txt', 'w').write('first line\nsecond line\nend of file\n')

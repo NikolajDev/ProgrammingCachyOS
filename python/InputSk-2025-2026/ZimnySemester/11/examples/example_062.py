@@ -1,0 +1,1 @@
+mnoz = mnoz - {prvok}     # immutable

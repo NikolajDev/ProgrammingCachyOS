@@ -1,0 +1,1 @@
+[vyraz for i in postupnost for j in postupnost if podmienka]

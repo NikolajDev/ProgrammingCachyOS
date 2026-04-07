@@ -1,0 +1,1 @@
+canvas.create_polygon(100, 50, 30, 150, 160, 120, 180, 40, fill='blue')

@@ -1,0 +1,1 @@
+>>> MojaTurtle.stvorec(t0, 50)

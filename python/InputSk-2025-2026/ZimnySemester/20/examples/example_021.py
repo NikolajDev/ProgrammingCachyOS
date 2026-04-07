@@ -1,0 +1,1 @@
+obr6 = obr1.rotate(30, expand=True)

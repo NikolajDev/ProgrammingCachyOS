@@ -1,0 +1,1 @@
+zoz[-5] == zoz[len(zoz)-5]

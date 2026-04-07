@@ -1,0 +1,1 @@
+Trieda.metoda(instancia, parametre)

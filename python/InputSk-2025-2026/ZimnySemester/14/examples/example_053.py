@@ -1,0 +1,1 @@
+assert podmienka, 'komentár'

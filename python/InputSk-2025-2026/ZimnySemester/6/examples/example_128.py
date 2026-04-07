@@ -1,0 +1,5 @@
+t = open('subor.txt', 'r')
+print(repr(t.read()))
+t.seek(0)
+print(list(t))
+t.close()

@@ -1,0 +1,1 @@
+[vyraz for i in postupnost]

@@ -1,0 +1,1 @@
+>>> ramik('tiger.png', 20).show()

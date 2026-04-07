@@ -1,0 +1,1 @@
+kresli(nahrad(p, ((3, 4), (4, 0), (None, 5))))

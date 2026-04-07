@@ -1,0 +1,1 @@
+hodnota = zoznam.pop(i)

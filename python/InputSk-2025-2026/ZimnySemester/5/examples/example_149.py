@@ -1,0 +1,1 @@
+zoznam.remove(zoznam[i])

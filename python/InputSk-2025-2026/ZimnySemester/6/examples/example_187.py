@@ -1,0 +1,1 @@
+>>> vyrob('skript.py', 20, 'Programujem v Pythone')

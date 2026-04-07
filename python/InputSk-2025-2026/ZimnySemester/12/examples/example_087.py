@@ -1,0 +1,1 @@
+>>> Test.z = 300            # nový atribút v triede

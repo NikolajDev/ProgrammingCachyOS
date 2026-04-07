@@ -1,0 +1,1 @@
+>>> vyhod_riadok('text1.txt', 1)

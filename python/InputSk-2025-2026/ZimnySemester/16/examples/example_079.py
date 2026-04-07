@@ -1,0 +1,3 @@
+>>> for i in delitele(100):
+...     print(i, end=' ')
+    1 2 4 5 10 20 25 50 100

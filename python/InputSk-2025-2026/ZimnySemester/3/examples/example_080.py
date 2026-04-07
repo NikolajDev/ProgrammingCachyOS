@@ -1,0 +1,1 @@
+hodnota = random.choice((1, 2, 5, 10, 20, 50))

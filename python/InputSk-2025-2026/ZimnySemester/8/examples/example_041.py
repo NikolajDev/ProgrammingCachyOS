@@ -1,0 +1,1 @@
+tkinter.Scale(command=rob, orient='horizontal', from_=5, to=179, length=300).pack()

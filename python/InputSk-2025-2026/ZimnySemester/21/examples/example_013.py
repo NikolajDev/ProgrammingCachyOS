@@ -1,0 +1,1 @@
+canvas = tkinter.Canvas()

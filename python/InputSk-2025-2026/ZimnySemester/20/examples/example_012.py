@@ -1,0 +1,1 @@
+>>> Image.open('obrazok.jpg').save('obrazok.png')

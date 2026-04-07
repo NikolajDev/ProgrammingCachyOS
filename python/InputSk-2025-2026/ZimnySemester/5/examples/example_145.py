@@ -1,0 +1,1 @@
+zoznam = zoznam[:i] + [hodnota] + zoznam[i:]

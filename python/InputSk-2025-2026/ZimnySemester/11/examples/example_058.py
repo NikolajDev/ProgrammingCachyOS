@@ -1,0 +1,1 @@
+mnoz.add(prvok)           # mutable

@@ -1,0 +1,1 @@
+kopia = list(zoznam)

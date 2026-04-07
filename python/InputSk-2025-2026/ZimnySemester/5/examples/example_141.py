@@ -1,0 +1,1 @@
+zoznam[i:i] = [hodnota]

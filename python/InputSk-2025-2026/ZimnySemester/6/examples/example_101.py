@@ -1,0 +1,1 @@
+premenná = open('meno_súboru', 'r')

@@ -1,0 +1,1 @@
+>>> obr1.paste(farba, oblasť)

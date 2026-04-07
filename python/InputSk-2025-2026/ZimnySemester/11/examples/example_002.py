@@ -1,0 +1,5 @@
+pridaj('Jana', '0901020304')
+pridaj('Juro', '0911111111')
+pridaj('Jozo', '0212345678')
+pridaj('Jana', '0999020304')
+vypis()

@@ -1,0 +1,1 @@
+>>> zapis(strihaj_gif(Image.open('vtak.gif')), 'temp/vtak', 'png')

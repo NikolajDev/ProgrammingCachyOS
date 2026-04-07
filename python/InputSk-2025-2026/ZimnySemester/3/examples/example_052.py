@@ -1,0 +1,1 @@
+canvas.create_text(x, y, text=znak, font='arial 35', angle=270-uhol)

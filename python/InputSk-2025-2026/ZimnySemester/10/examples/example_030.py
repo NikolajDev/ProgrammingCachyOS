@@ -1,0 +1,1 @@
+kresli(t, 15, ('white', 'black', 'red', 'blue', 'yellow'))

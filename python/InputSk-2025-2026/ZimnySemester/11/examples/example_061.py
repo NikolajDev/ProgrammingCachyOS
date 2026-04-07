@@ -1,0 +1,1 @@
+mnoz.discard(prvok)       # mutable

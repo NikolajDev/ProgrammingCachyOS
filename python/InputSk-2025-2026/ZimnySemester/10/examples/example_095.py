@@ -1,0 +1,1 @@
+kresli(priprav(generuj('a', ['a->Fb[-a]+a', 'b->Fb'], 3), 50, 45))

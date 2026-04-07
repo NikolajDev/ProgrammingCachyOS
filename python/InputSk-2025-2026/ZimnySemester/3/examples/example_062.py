@@ -1,0 +1,1 @@
+canvas = tkinter.Canvas(bg='white', width=400, height=200)

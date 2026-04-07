@@ -1,0 +1,2 @@
+def funkcia():
+    pass

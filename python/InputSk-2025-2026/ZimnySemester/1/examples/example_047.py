@@ -1,0 +1,1 @@
+x = sucet = pocet = ab = 0

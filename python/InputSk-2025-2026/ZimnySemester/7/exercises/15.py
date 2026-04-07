@@ -1,0 +1,2 @@
+'''Riešenie predchádzajúcej (14) úlohy uprav tak, aby fungoval aj pre 2 rôzne veľké štvorce: jeden červený veľkosti 50x50, druhý modrý veľkosti 100x100. Vedel by si tento program upraviť tak, aby fungoval pre ľubovoľný počet rôzne veľkých štvorcov (alebo aj obdĺžnikov) v ploche?
+'''

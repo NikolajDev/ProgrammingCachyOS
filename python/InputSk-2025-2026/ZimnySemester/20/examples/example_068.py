@@ -1,0 +1,1 @@
+>>> zlep(strihaj(obr1, 5)[::-1]).show()

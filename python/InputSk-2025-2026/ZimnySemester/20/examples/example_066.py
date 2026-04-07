@@ -1,0 +1,1 @@
+>>> vymen(Image.open('tiger.png')).show()

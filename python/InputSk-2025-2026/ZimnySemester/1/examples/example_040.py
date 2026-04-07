@@ -1,0 +1,1 @@
+meno_premennej = hodnota

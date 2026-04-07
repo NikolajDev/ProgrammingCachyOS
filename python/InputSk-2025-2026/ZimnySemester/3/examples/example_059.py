@@ -1,0 +1,1 @@
+premenna = tkinter.PhotoImage(file='meno suboru')

@@ -1,0 +1,1 @@
+canvas.bind(meno_udalosti, funkcia)

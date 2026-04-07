@@ -1,0 +1,11 @@
+a
+Shift_L
+A
+Left
+Right
+Up
+Down
+Next
+Escape
+Return
+F1

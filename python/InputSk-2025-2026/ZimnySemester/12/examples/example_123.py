@@ -1,0 +1,1 @@
+VyrobPolygon('poly.txt')    # týmto sa zavolá konštruktor __init__()

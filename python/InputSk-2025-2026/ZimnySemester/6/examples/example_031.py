@@ -1,0 +1,1 @@
+reťazec[prvý : ]

@@ -1,0 +1,1 @@
+>>> kopia(Image.open('tiger.png')).show()

@@ -1,0 +1,3 @@
+...
+  [Previous line repeated 1022 more times]
+RecursionError: maximum recursion depth exceeded

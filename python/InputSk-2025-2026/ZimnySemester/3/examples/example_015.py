@@ -1,0 +1,1 @@
+canvas.create_rectangle(x, y, x + sirka, y + vyska, fill='red')

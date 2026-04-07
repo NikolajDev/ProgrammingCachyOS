@@ -1,0 +1,1 @@
+premenna = hodnota

@@ -1,0 +1,1 @@
+f'formátovací reťazec s hodnotami v {}'

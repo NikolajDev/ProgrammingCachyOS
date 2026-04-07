@@ -1,0 +1,1 @@
+mnoz -= {prvok}           # mutable

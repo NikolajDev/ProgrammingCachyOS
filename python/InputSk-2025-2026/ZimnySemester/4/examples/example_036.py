@@ -1,0 +1,1 @@
+canvas.create_rectangle(x, 200, x + a, 200 - a)

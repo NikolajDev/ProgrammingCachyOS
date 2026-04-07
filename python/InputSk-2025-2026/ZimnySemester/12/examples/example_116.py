@@ -1,0 +1,6 @@
+k1 = Kniha('Dobsinsky', 'Rozpravky')
+k1.nastav_vydavatela('Mlade Leta')
+k2 = Kniha('Lasica', 'Bodka')
+k2.nastav_rok(2007)
+k1.vypis()
+k2.vypis()

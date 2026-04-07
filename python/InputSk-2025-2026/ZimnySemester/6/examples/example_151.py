@@ -1,0 +1,1 @@
+>>> open('subor2.txt', 'w').write(open('subor.txt', 'r').read())

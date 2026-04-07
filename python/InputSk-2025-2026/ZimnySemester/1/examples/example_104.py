@@ -1,0 +1,2 @@
+for i in range(10):
+    print(i, i+10, i+20, i+30, i+40, i+50, i+60, i+70, i+80, i+90)

@@ -1,0 +1,1 @@
+>>> obr2 = obr1.resize((nova_sirka, nova_vyska))

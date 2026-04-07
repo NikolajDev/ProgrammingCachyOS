@@ -1,0 +1,1 @@
+vypis['text'] = 'novy text'

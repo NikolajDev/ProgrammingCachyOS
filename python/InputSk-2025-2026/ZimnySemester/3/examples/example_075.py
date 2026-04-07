@@ -1,0 +1,1 @@
+canvas.coords(označenie, postupnosť)

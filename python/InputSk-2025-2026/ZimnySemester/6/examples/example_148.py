@@ -1,0 +1,1 @@
+>>> print('first line\nsecond line\nend of file', file=open('subor3.txt', 'w'))

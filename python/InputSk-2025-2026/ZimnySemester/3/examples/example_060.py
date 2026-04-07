@@ -1,0 +1,1 @@
+canvas.create_image(x, y, image=premenna)

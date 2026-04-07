@@ -1,0 +1,1 @@
+zoznam.count(hodnota)

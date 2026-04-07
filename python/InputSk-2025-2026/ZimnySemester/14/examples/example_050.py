@@ -1,0 +1,1 @@
+class MojaChyba(Exception): pass

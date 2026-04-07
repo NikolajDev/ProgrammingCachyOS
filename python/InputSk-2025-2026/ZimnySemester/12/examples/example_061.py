@@ -1,0 +1,13 @@
+class Meno_triedy:
+
+    def __init__(self, parametre):
+        ...
+
+    def metoda1(self, parametre):
+        ...
+
+    def metoda2(self, parametre):
+        ...
+
+    def metoda3(self, parametre):
+        ...

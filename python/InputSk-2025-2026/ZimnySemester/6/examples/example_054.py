@@ -1,0 +1,2 @@
+.....veľa bodiek
+veľa bodiek

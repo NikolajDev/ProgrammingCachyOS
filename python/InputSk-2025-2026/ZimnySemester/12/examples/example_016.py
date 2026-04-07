@@ -1,0 +1,2 @@
+>>> fero.meno
+    'Frantisek'

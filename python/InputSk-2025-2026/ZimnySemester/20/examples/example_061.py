@@ -1,0 +1,1 @@
+>>> prevrat(Image.open('macka.png')).show()

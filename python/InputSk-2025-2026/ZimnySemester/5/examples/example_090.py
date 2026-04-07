@@ -1,0 +1,1 @@
+zoznam.insert(index, hodnota)
