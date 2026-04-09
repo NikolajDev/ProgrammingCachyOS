@@ -1,1 +1,0 @@
->>> obr4 = Image.new('RGB', obr1.size, '#ffffff')

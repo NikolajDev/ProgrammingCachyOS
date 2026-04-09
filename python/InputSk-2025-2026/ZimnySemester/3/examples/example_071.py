@@ -1,1 +1,0 @@
-canvas.move(označenie, dx, dy)

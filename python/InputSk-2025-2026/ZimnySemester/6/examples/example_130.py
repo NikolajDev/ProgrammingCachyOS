@@ -1,1 +1,0 @@
-subor = open('meno_súboru', 'w')

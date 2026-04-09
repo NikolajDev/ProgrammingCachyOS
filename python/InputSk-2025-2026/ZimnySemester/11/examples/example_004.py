@@ -1,1 +1,0 @@
-kľúč : hodnota

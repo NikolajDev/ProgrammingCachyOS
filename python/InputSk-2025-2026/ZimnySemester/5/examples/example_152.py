@@ -1,2 +1,0 @@
-while zoznam:
-    zoznam.pop()

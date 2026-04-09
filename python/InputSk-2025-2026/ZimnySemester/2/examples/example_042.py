@@ -1,1 +1,0 @@
->>> trojuholnik(5)

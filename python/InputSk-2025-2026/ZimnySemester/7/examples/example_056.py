@@ -1,1 +1,0 @@
-canvas.bind('<ButtonPress-1>', klik)

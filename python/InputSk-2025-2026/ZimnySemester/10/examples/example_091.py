@@ -1,4 +1,0 @@
-0: F
-1: F-F++F-F
-2: F-F++F-F-F-F++F-F++F-F++F-F-F-F++F-F
-3: F-F++F-F-F-F++F-F++F-F++F-F-F-F++F-F-F-F++F-F-F-F++F-F++F-F++F-F-F-F++F-F++F-F++F-F-F-F++F-F++F-F++F-F-F-F++F-F-F-F++F-F-F-F++F-F++F-F++F-F-F-F++F-F

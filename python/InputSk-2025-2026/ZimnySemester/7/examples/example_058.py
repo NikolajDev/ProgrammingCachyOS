@@ -1,1 +1,0 @@
-vypis['text'] = 'novy text'

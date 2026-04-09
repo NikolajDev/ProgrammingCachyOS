@@ -1,3 +1,0 @@
->>> vek['Juraj']
-    ...
-    KeyError: 'Juraj'

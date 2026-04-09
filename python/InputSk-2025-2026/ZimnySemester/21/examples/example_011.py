@@ -1,5 +1,0 @@
-pozadie = tkinter.PhotoImage(file='les.png')
-sir, vys = pozadie.width(), pozadie.height()
-canvas = tkinter.Canvas(width=sir, height=vys)
-canvas.pack()
-canvas.create_image(0, 0, image=pozadie, anchor='nw')

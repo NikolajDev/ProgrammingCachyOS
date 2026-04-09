@@ -1,1 +1,0 @@
-tk_img = ImageTk.PhotoImage(Image.open('pyton.png').rotate(45, expand=True))

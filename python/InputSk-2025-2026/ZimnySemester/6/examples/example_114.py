@@ -1,5 +1,0 @@
-'Od ucenia este'
-'nikto nezomrel,'
-'ale naco riskovat.'
-''
-'Albert Einstein'

@@ -1,1 +1,0 @@
-subor.write('Python\nje najlepsi\n')

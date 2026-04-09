@@ -1,1 +1,0 @@
->>> sedy(obr1).show()

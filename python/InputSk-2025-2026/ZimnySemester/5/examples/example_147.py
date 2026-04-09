@@ -1,1 +1,0 @@
-del zoznam[i]

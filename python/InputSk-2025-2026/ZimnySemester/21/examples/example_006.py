@@ -1,1 +1,0 @@
->>> azoz.append(Anim(280, 200, zoz))

@@ -1,1 +1,0 @@
-kresli(zrkadlo(zrkadlo(p)), 15)

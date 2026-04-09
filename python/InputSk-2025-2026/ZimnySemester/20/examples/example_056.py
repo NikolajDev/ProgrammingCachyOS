@@ -1,1 +1,0 @@
->>> novy(200, 100).show()    # zobrazí modrý obdĺžnik 200x100

@@ -1,3 +1,0 @@
->>> vipis()
-    ...
-    NameError: name 'vipis' is not defined

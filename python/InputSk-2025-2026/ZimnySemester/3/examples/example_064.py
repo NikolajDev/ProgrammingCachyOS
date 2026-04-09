@@ -1,1 +1,0 @@
-canvas.create_rectangle(x, y, x, y, ...)     # súradnice dvoch bodov

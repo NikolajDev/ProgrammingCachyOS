@@ -1,1 +1,0 @@
-zoznam.append(hodnota)

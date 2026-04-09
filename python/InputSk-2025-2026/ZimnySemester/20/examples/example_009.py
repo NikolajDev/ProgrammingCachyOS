@@ -1,1 +1,0 @@
->>> obr4 = Image.new('RGB', (300, 200), 'pink')

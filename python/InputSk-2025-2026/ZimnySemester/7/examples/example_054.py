@@ -1,1 +1,0 @@
-tkinter.Button(text='Zmaž', command=zmaz).pack()

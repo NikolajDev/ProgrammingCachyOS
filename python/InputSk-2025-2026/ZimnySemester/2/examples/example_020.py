@@ -1,5 +1,0 @@
-gugaqo
-
-lupiha
-
-cyxebi

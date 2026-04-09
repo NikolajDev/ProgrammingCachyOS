@@ -1,1 +1,0 @@
-logA n = logB n / logB A

@@ -1,1 +1,0 @@
-vstup.get()

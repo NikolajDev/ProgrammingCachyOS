@@ -1,1 +1,0 @@
-del slovnik[kluc]

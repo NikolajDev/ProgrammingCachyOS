@@ -1,1 +1,0 @@
->>> with open('readme.txt') as t: print(t.read())

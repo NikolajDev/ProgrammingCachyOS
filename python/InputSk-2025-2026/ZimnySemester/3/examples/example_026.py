@@ -1,1 +1,0 @@
-farba = f'#{random.randrange(256**3):06x}'

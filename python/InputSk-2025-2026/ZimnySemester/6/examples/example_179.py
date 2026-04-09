@@ -1,2 +1,0 @@
-prvý riadok
-druhý riadok

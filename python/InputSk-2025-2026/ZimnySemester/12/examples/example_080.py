@@ -1,7 +1,0 @@
-cas1 = Cas(10, 22, 30)
-cas2 = Cas(10, 8)
-print('cas1 =', cas1)
-print('cas2 =', cas2)
-print('sucet =', cas1.sucet(cas2))
-print('cas1 > cas2 =', cas1.vacsi(cas2))
-print('cas2 > cas1 =', cas2.vacsi(cas1))

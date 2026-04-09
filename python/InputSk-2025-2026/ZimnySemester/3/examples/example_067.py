@@ -1,1 +1,0 @@
-canvas.create_polygon(x, y, x, y, x, y, x, y, ...)       # súradnice aspoň dvoch bodov

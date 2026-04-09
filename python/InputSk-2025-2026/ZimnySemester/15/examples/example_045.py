@@ -1,6 +1,0 @@
-class Stack:
-    def __init__(self, postupnost=None):
-        ...
-    ...
-    def __repr__(self):
-        return 'Stack(...)'

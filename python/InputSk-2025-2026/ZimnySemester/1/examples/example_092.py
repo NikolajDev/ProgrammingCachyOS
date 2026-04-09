@@ -1,1 +1,0 @@
-print('počet znakov reťazca =', len(vstup))

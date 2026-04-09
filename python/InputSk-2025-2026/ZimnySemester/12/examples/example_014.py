@@ -1,1 +1,0 @@
->>> fero.meno = 'Frantisek'

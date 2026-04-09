@@ -1,1 +1,0 @@
-(2, 6, 4, 2, 2, 2)      # prvá 2 je hĺbka tabuľky

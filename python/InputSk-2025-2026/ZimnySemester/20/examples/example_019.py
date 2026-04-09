@@ -1,1 +1,0 @@
->>> novy_obr = obr1.rotate(uhol)

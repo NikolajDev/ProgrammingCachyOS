@@ -1,1 +1,0 @@
->>> prvy, druhy = open('dva.txt')

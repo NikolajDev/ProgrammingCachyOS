@@ -1,1 +1,0 @@
->>> novy_obr = povodny_obr.crop(oblasť)

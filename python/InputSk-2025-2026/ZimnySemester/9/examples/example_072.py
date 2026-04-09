@@ -1,2 +1,0 @@
->>> palindrom('JelenoviPivoNelej')
-    True

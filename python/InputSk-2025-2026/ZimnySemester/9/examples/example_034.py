@@ -1,1 +1,0 @@
-bin(n, k) = bin(n-1, k-1) + bin(n-1, k)

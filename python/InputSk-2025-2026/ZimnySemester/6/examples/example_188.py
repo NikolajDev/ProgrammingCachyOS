@@ -1,3 +1,0 @@
-Programujem v Pythone
-Programujem v Pythone
-...

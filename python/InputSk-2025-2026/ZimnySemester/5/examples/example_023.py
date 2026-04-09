@@ -1,1 +1,0 @@
-zoznam[prvý : zaposledný : krok]

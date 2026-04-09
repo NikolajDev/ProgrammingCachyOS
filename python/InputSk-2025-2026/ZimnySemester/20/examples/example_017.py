@@ -1,1 +1,0 @@
-obr4 = obr1.resize((sirka // 10, vyska // 10)).resize((sirka, vyska))

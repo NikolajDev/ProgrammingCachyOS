@@ -1,1 +1,0 @@
-turtle.mainloop()         # to isté aj turtle.done()

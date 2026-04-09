@@ -1,1 +1,0 @@
->>> print('zvysok =', zisti(153, 33)[1])

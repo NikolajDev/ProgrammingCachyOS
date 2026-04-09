@@ -1,3 +1,0 @@
->>> Image.open('papagaj.png').show()
->>> novy = ...
->>> novy.show()

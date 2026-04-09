@@ -1,1 +1,0 @@
-zoznam = zoznam[:i] + zoznam[i + 1:]

@@ -1,1 +1,0 @@
-print('zadana suma v euro je', float(input('zadaj eura: ')) * 25, 'korun')

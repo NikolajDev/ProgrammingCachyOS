@@ -1,1 +1,0 @@
-canvas.create_oval(x, y, x, y, ...)       # súradnice dvoch bodov

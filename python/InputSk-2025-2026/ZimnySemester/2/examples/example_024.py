@@ -1,1 +1,0 @@
-meno_funkcie()

@@ -1,1 +1,0 @@
-canvas.create_image(x, y, ...)        # súradnica jedného bodu

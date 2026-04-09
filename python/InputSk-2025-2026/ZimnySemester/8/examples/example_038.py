@@ -1,1 +1,0 @@
-turtle.getscreen().clear()

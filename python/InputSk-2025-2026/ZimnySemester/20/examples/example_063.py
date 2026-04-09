@@ -1,1 +1,0 @@
->>> stvorce(3, 4)     # vytvorí obrázok veľkosti 400x300

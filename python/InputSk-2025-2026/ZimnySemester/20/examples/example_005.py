@@ -1,1 +1,0 @@
->>> obr = Image.open('meno súboru')

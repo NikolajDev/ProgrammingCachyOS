@@ -1,1 +1,0 @@
-subor.write(reťazec)

@@ -1,1 +1,0 @@
-canvas.create_text(x, y, ...)        # súradnica jedného bodu

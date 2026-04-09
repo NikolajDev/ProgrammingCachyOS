@@ -1,1 +1,0 @@
->>> vykresli_text('text3.txt', 20)

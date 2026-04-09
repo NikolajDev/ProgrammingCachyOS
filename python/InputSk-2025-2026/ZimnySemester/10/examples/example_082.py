@@ -1,1 +1,0 @@
-kresli(zrkadlo(p))

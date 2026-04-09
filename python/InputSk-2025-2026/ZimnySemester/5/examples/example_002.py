@@ -1,1 +1,0 @@
-zoznam[číslo]

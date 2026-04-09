@@ -1,1 +1,0 @@
-oddeľovač.join(zoznam_reťazcov)

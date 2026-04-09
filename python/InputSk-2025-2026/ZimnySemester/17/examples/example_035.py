@@ -1,1 +1,0 @@
-index = (hash(kluc) + i) % len(self.tab)

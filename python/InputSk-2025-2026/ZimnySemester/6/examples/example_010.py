@@ -1,1 +1,0 @@
-podretazec in retazec

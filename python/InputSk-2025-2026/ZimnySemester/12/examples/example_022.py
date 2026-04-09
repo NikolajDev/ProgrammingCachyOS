@@ -1,3 +1,0 @@
->>> vypis(zuka)
-    ...
-    AttributeError: 'Student' object has no attribute 'meno'

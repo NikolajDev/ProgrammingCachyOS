@@ -1,1 +1,0 @@
-t.shapesize(sirka, vyska, hrubka)

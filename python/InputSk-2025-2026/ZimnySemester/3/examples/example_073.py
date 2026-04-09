@@ -1,1 +1,0 @@
-canvas.itemconfig(označenie, parametre)

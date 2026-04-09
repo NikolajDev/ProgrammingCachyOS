@@ -1,4 +1,0 @@
->>> input('? ')
-    ? matfyz
-    'matfyz'
->>>

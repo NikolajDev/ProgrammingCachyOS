@@ -1,1 +1,0 @@
-reťazec.split()

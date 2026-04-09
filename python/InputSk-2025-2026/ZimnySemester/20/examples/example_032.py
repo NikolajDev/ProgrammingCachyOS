@@ -1,1 +1,0 @@
->>> obr1.paste(obr2, kam, obr2)

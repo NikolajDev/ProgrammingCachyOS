@@ -1,1 +1,0 @@
-instancia.metoda(parametre)

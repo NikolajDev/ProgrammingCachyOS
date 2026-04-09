@@ -1,1 +1,0 @@
->>> t.reset()     # zmaže grafickú plochu a inicializuje korytnačku

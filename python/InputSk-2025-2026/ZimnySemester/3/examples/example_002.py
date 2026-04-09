@@ -1,1 +1,0 @@
-canvas.create_<meno útvaru>(x, y, ..., <ďalšie parametre>)

@@ -1,3 +1,0 @@
-i = canvas.create_rectangle(80, 90, 120, 110, fill='gray')
-...
-canvas.itemconfig(i, fill='red')

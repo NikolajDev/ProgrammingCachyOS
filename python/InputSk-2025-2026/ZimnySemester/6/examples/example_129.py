@@ -1,1 +1,0 @@
-subor = open(meno_suboru, 'r', encoding='utf-8')

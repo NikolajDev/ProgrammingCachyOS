@@ -1,5 +1,0 @@
-print('programujem v Pythone')
-print('programujem v Pythone')
-print('programujem v Pythone')
-print('programujem v Pythone')
-print('programujem v Pythone')

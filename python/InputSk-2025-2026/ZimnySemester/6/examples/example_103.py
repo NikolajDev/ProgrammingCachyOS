@@ -1,1 +1,0 @@
-riadok = subor.readline()

@@ -1,1 +1,0 @@
-obr5 = obr1.rotate(30)

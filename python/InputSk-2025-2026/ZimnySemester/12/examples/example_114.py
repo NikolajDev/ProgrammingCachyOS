@@ -1,7 +1,0 @@
-s = Subor('text.txt')
-s.pripis('prvy riadok')
-s.pripis('druhy riadok')
-s.vypis()
-s.pripis('posledny riadok')
-print('***')
-s.vypis()

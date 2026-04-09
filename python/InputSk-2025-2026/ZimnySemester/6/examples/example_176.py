@@ -1,1 +1,0 @@
-stvorce('red blue purple red gold', 40)

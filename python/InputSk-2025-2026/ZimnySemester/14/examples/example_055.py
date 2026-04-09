@@ -1,9 +1,0 @@
->>> podiel(2.2, 3)
-    ...
-    AssertionError: prvy parameter nie je cele cislo
->>> podiel(22, 3.3)
-    ...
-    AssertionError: druhy parameter nie je cele cislo
->>> podiel(22, 0)
-    ...
-    AssertionError: neda sa delit nulou

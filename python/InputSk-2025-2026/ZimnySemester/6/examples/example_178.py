@@ -1,1 +1,0 @@
->>> kresli('4v4j4z4sh5vd' * 5)

@@ -1,1 +1,0 @@
->>> t.clear()     # zmaže grafickú plochu a korytnačku nechá tam, kde sa momentálne nachádza

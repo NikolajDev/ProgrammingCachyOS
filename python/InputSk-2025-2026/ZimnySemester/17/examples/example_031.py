@@ -1,1 +1,0 @@
-self.tab = [None] * 11

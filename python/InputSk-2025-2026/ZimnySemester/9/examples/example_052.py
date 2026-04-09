@@ -1,1 +1,0 @@
-pocet korytnaciek = 64

@@ -1,1 +1,0 @@
-kresli(zvacsi(p), 10)

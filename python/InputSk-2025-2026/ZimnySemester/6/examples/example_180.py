@@ -1,1 +1,0 @@
->>> pridaj('subor.txt', 'nový riadok\n')

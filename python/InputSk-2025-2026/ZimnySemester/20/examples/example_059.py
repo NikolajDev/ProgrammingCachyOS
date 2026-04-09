@@ -1,1 +1,0 @@
->>> zaramuj('tiger2.png').show()

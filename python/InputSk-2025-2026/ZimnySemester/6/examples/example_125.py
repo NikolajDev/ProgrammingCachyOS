@@ -1,1 +1,0 @@
-['Od ucenia este\n', 'nikto nezomrel,   \n', '  ale naco riskovat.\n', '\n', 'Albert Einstein\n']

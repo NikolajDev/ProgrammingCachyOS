@@ -1,1 +1,0 @@
-MojaTurtle().domcek(100)
