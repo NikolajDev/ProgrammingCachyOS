@@ -1,9 +1,7 @@
 # Starter Code
-import tkinter
+from tkinter import Canvas, mainloop
 
-root = tkinter.Tk()
-
-canvas = tkinter.Canvas(root, width=300, height=300)
+canvas = Canvas(width=300, height=300)
 canvas.pack()
 
 # here we will put the code
@@ -19,4 +17,4 @@ canvas.create_image(...)          # draws png image
 
 canvas.create_text(150, 150, text='Programming in python')
 
-root.mainloop()
+mainloop()

@@ -4,11 +4,12 @@ Napíš program s funkciou pyramida(x, y), ktorá nakreslí pyramídu z kvádrov
 '''
 from tkinter import Canvas, mainloop
 
+canvas = Canvas()
+canvas.pack()
+
 def pyramida(x, y):
     s1, s2, s3, s4 = 200, 150, 100, 50
     c1, c2, c3, c4 = "dark green", "green", "lime green", "lime"
-    canvas = Canvas()
-    canvas.pack()
     for _ in range(4):
         canvas.create_rectangle(x - s1/2, y, x + s1/2, y - 50, fill=c1)
         y -= 50

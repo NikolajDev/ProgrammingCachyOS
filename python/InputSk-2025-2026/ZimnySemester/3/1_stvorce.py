@@ -14,10 +14,10 @@ Vyskúšaj spustiť aj pre iné hodnoty, napríklad stvorce(120, 10).
 
 from tkinter import Canvas, mainloop
 
-def stvorce(x, y):
-    canvas = Canvas()
-    canvas.pack()
+canvas = Canvas()
+canvas.pack()
 
+def stvorce(x, y):
     canvas.create_rectangle(x,y,x+100, y+100, fill="red")
     canvas.create_text(x+50, y+50, text="červený",
     font='arial 20', fill='yellow')

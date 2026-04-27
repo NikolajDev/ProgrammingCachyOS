@@ -4,10 +4,11 @@ Napíš program s funkciou cikcak(n, x, y, d), ktorá nakreslí cikcakovú čiar
 """
 from tkinter import Canvas, mainloop
 
+canvas = Canvas()
+canvas.pack()
+
 def cikcak(n, x, y, d):
     num = 1
-    canvas = Canvas()
-    canvas.pack()
     for i in range(n):
         canvas.create_line(x, y, x+d, y+(d*num), width=2, fill="blue")
         y = y+(d*num)

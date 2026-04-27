@@ -14,13 +14,14 @@ Malo by to fungovať pre rôzne hodnoty parametrov.
 
 from tkinter import Canvas, mainloop
 
+canvas = Canvas(width=500, height=500)
+canvas.pack()
+
 # Our expectations or conditions:
 # The user will enter the valid x and y from the range (0,0 to 500, 500)
 # Also the size of the square would not be bigger than the canvas
 
 def dva_stvorce(x:int ,y:int ,a1:int ,a2:int):
-    canvas = Canvas(width=500, height=500)
-    canvas.pack()
     help = (a1 - a2)/2
     print(help)
     canvas.create_rectangle(x, y, x + a1, y + a1, 
