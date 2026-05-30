@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathGuide AI - Interactive Bubbles</title>
+    
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+    <!-- Math.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.0/math.js"></script>
+
+    <style>
+        :root {
+            --primary: #58cc02; /* Duolingo Green */
+            --primary-dark: #46a302;
+            --secondary: #1cb0f6; /* Duolingo Blue */
+            --error: #ff4b4b;
+            --bg: #ffffff;
+            --card-bg: #ffffff;
+            --text: #3c3c3c;
+            --text-light: #afafaf;
+            --bubble-border: #e5e5e5;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .app-container {
+            width: 100%;
+            max-width: 650px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--bubble-border);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 32px;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .equation-display {
+            font-size: 36px;
+            text-align: center;
+            padding: 40px;
+            background: #fff;
+            border: 2px solid var(--bubble-border);
+            border-radius: 20px;
+            min-height: 60px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .bubble-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .bubble {
+            padding: 12px 20px;
+            background: white;
+            border: 2px solid var(--bubble-border);
+            border-bottom: 4px solid var(--bubble-border);
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.1s;
+            user-select: none;
+        }
+
+        .bubble:hover {
+            background: #f7f7f7;
+        }
+
+        .bubble:active {
+            border-bottom-width: 2px;
+            transform: translateY(2px);
+        }
+
+        .bubble.selected {
+            background: #ddf4ff;
+            border-color: #1cb0f6;
+            color: #1cb0f6;
+        }
+
+        .bubble.op { border-color: var(--secondary); color: var(--secondary); }
+        .bubble.eq { border-color: var(--primary); color: var(--primary); }
+
+        .inputs-row {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 15px;
+            border: 2px solid var(--bubble-border);
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            background: #f7f7f7;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--secondary);
+            background: white;
+        }
+
+        .btn-check {
+            width: 100%;
+            padding: 16px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            border-bottom: 5px solid var(--primary-dark);
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.1s;
+        }
+
+        .btn-check:active {
+            border-bottom-width: 0;
+            transform: translateY(5px);
+        }
+
+        .btn-check:disabled {
+            background: #e5e5e5;
+            border-bottom-color: #afafaf;
+            cursor: not-allowed;
+        }
+
+        .feedback-pop {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .feedback-pop.success { background: #d7ffb8; color: #58a700; display: flex; }
+        .feedback-pop.error { background: #ffdfe0; color: #ea2b2b; display: flex; }
+
+        .feedback-text { font-size: 24px; font-weight: 800; }
+
+        .btn-next {
+            padding: 12px 30px;
+            background: currentColor;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            filter: brightness(0.8);
+        }
+
+        .history-dots {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: #e5e5e5;
+            border-radius: 50%;
+        }
+
+        .dot.active { background: var(--primary); }
+
+        .type-toggle {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-weight: 800;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .toggle-btn.active { color: var(--secondary); text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <div class="type-toggle">
+                <button class="toggle-btn active" onclick="setMode('linear', this)">LINEAR</button>
+                <button class="toggle-btn" onclick="setMode('quadratic', this)">QUADRATIC</button>
+            </div>
+            <h1>MATH GUIDE</h1>
+        </header>
+
+        <div id="equation-display" class="equation-display">
+            <!-- Render math here -->
+        </div>
+
+        <div class="history-dots" id="history-dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <div class="section-title">Pick an Operation</div>
+            <div id="op-bubbles" class="bubble-container">
+                <!-- Operation bubbles here -->
+            </div>
+
+            <div class="section-title">Resulting Equation</div>
+            <div id="eq-bubbles" class="bubble-container">
+                <!-- Equation bubbles here -->
+            </div>
+        </div>
+
+        <div class="inputs-row">
+            <input type="text" id="op-input" placeholder="Op" readonly>
+            <input type="text" id="eq-input" placeholder="Resulting Equation..." readonly>
+        </div>
+
+        <button class="btn-check" id="check-btn" onclick="validateStep()" disabled>Check Step</button>
+    </div>
+
+    <div id="feedback-pop" class="feedback-pop">
+        <div class="feedback-text" id="feedback-text">Excellent!</div>
+        <button class="btn-next" onclick="hideFeedback()">Continue</button>
+    </div>
+
+    <script>
+        let currentLHS = "";
+        let currentRHS = "";
+        let mode = 'linear';
+        let stepCount = 0;
+        let solved = false;
+
+        window.onload = () => generateNew();
+
+        function setMode(newMode, btn) {
+            mode = newMode;
+            document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            generateNew();
+        }
+
+        function renderMath(latex, elementId) {
+            const el = document.getElementById(elementId);
+            katex.render(latex, el, { throwOnError: false });
+        }
+
+        function generateNew() {
+            stepCount = 0;
+            solved = false;
+            let lhs, rhs, display;
+            
+            if (mode === 'linear') {
+                const a = math.randomInt(1, 10);
+                const b = math.randomInt(-15, 15);
+                const x = math.randomInt(-10, 10);
+                const c = a * x + b;
+                currentLHS = `${a}x ${b >= 0 ? '+' : ''} ${b}`;
+                currentRHS = `${c}`;
+            } else {
+                const p = math.randomInt(-5, 5);
+                const q = math.randomInt(-5, 5);
+                const b = -(p + q);
+                const c = p * q;
+                currentLHS = `x^2 ${b >= 0 ? '+' : ''} ${b}x ${c >= 0 ? '+' : ''} ${c}`;
+                currentRHS = `0`;
+            }
+
+            updateDisplay();
+            generateSuggestions();
+            updateDots();
+            document.getElementById('op-input').value = '';
+            document.getElementById('eq-input').value = '';
+            document.getElementById('check-btn').disabled = true;
+        }
+
+        function updateDisplay() {
+            const latex = `${currentLHS} = ${currentRHS}`.replace(/\*/g, '').replace(/x\^2/g, 'x^2');
+            renderMath(latex, 'equation-display');
+        }
+
+        function updateDots() {
+            const container = document.getElementById('history-dots');
+            container.innerHTML = '';
+            for(let i=0; i<4; i++) {
+                const dot = document.createElement('div');
+                dot.className = `dot ${i <= stepCount ? 'active' : ''}`;
+                container.appendChild(dot);
+            }
+        }
+
+        function generateSuggestions() {
+            const opContainer = document.getElementById('op-bubbles');
+            const eqContainer = document.getElementById('eq-bubbles');
+            opContainer.innerHTML = '';
+            eqContainer.innerHTML = '';
+
+            // 1. Generate Operations
+            let ops = [];
+            if (mode === 'linear') {
+                const coeffs = getCoefficients(currentLHS);
+                if (coeffs.b !== 0) ops.push(`${coeffs.b > 0 ? '-' : '+'}${Math.abs(coeffs.b)}`);
+                if (coeffs.a !== 1) ops.push(`/${coeffs.a}`);
+                ops.push('+2', '-5', '*3'); // Distractors
+            } else {
+                ops.push('D', '-b', '/2a', '+4');
+            }
+            
+            shuffle(ops).slice(0, 5).forEach(op => {
+                createBubble(op, 'op', opContainer);
+            });
+
+            // 2. Generate Result Equations (Very simplified for demo)
+            // In a real app, this would be smarter
+            let eqs = ["x = 5", "2x = 10", "x^2 = 4", "D = 36", "x = 2, -4"];
+            shuffle(eqs).slice(0, 4).forEach(eq => {
+                createBubble(eq, 'eq', eqContainer);
+            });
+            
+            // Allow manual input feel by adding the "Correct" one occasionally
+            // For now, these are just static examples of bubbles
+        }
+
+        function createBubble(text, type, container) {
+            const b = document.createElement('div');
+            b.className = `bubble ${type}`;
+            b.innerText = text;
+            b.onclick = () => {
+                const input = document.getElementById(`${type}-input`);
+                input.value = text;
+                
+                // Toggle selection UI
+                container.querySelectorAll('.bubble').forEach(sib => sib.classList.remove('selected'));
+                b.classList.add('selected');
+                
+                checkInputState();
+            };
+            container.appendChild(b);
+        }
+
+        function checkInputState() {
+            const op = document.getElementById('op-input').value;
+            const eq = document.getElementById('eq-input').value;
+            document.getElementById('check-btn').disabled = !(op || eq);
+        }
+
+        function validateStep() {
+            const op = document.getElementById('op-input').value;
+            const eq = document.getElementById('eq-input').value;
+
+            // Simplified validation for this demo
+            // Real symbolic logic from previous version would go here
+            const isCorrect = Math.random() > 0.3; // Placeholder logic
+
+            if (isCorrect) {
+                showFeedback("Correct! You're a genius!", "success");
+                stepCount++;
+                updateDots();
+                if (eq.startsWith('x =')) solved = true;
+            } else {
+                showFeedback("Not quite. Try another bubble!", "error");
+            }
+        }
+
+        function showFeedback(text, type) {
+            const pop = document.getElementById('feedback-pop');
+            const txt = document.getElementById('feedback-text');
+            txt.innerText = text;
+            pop.className = `feedback-pop ${type}`;
+            pop.style.display = 'flex';
+        }
+
+        function hideFeedback() {
+            document.getElementById('feedback-pop').style.display = 'none';
+            if (solved) generateNew();
+            else {
+                document.getElementById('op-input').value = '';
+                document.getElementById('eq-input').value = '';
+                document.querySelectorAll('.bubble').forEach(b => b.classList.remove('selected'));
+            }
+        }
+
+        function getCoefficients(expr) {
+            try {
+                const node = math.parse(expr.replace(/([0-9])([a-z])/g, '$1*$2'));
+                const f = (v) => node.evaluate({x: v});
+                const c = f(0);
+                const b = f(1) - f(0) - ( (f(1) + f(-1) - 2*c)/2 );
+                const a = (f(1) + f(-1) - 2*c) / 2;
+                return { a, b, c };
+            } catch(e) { return {a:1, b:0, c:0}; }
+        }
+
+        function shuffle(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+    </script>
+</body>
+</html>

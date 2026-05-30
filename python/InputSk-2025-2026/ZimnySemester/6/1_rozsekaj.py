@@ -23,4 +23,5 @@ def rozsekaj(text, sirka):
             len += 1
     return result
 
-print(rozsekaj('Anicka dusicka, kde si bola', 10))
+if __name__ == "__main__":
+    print(rozsekaj('Anicka dusicka, kde si bola', 10))

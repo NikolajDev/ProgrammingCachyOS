@@ -20,7 +20,7 @@ nakreslí vedľa seba 5 štvorcov:
 
 import tkinter
 
-def kresli(retazec):
+def kresli(canvas, retazec):
     x, y = 10, 100
     pero_dole = True
     DIGITS = '0123456789'
@@ -49,9 +49,10 @@ def kresli(retazec):
             canvas.create_line(x, y, x1, y1)
         x, y = x1, y1
 
-canvas = tkinter.Canvas()
-canvas.pack()
+if __name__ == "__main__":
+    canvas = tkinter.Canvas()
+    canvas.pack()
 
-kresli('4v4j4z4sh5vd' * 5)
+    kresli(canvas, '4v4j4z4sh5vd' * 5)
 
-tkinter.mainloop()
+    tkinter.mainloop()

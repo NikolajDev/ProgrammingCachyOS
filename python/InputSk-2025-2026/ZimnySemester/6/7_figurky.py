@@ -6,21 +6,19 @@ Unicode 0x2654 a ďalších päť za ním sú obrázky šachových figúrok. Nap
 from tkinter import Canvas, mainloop
 from random import randrange
 
-canvas = Canvas()
-canvas.pack()
-
 def random_color():
     return f"#{randrange(256**3):06x}"
 
-x = 30
-y = 150
+def draw_figures(canvas):
+    x = 30
+    y = 150
+    start = 0x2654
+    for i in range(6):
+        canvas.create_text(x, y, text=f"{chr(start + i)}", fill=random_color(), font=('Segoe UI Symbol', 50))
+        x += 60
 
-start = 0x2654
-for i in range(6):
-    canvas.create_text(x, y, text=f"{chr(start + i)}", fill=random_color(), font=('Segoe UI Symbol', 50))
-    x += 60
-    
-
-
-
-mainloop()
+if __name__ == "__main__":
+    canvas = Canvas()
+    canvas.pack()
+    draw_figures(canvas)
+    mainloop()

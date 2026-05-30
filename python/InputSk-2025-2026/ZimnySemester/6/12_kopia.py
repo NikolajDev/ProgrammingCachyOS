@@ -4,7 +4,7 @@ odovzdaj Napíš funkciu kopia(meno_suboru1, meno_suboru2, od=None, do=None), kt
 """
 
 def kopia(meno_suboru1, meno_suboru2, od=None, do=None):
-    with open(f"./python/InputSk-2025-2026/ZimnySemester/6/{meno_suboru1}") as file:
+    with open(meno_suboru1) as file:
         lines = file.readlines()
     zaciatok = 0
     koniec = len(lines)
@@ -12,8 +12,9 @@ def kopia(meno_suboru1, meno_suboru2, od=None, do=None):
         zaciatok = od
     if do is not None:
         koniec = do
-    with open(f"./python/InputSk-2025-2026/ZimnySemester/6/{meno_suboru2}", 'w') as file:
+    with open(meno_suboru2, 'w') as file:
         file.writelines(lines[zaciatok:koniec+1])
 
 
-kopia("najdlhsi_riadok.txt", 'copyright.txt', 0, 3)
+if __name__ == "__main__":
+    kopia("najdlhsi_riadok.txt", 'copyright.txt', 0, 3)

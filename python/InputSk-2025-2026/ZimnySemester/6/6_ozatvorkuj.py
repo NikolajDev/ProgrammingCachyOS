@@ -12,4 +12,5 @@ ozatvorkuj('prospešné programovanie v prologu', 'pro')
 def ozatvorkuj(retazec, podretazec):
     return retazec.replace(podretazec, f"({podretazec})")
 
-print(ozatvorkuj('prospešné programovanie v prologu', 'pro'))
+if __name__ == "__main__":
+    print(ozatvorkuj('prospešné programovanie v prologu', 'pro'))

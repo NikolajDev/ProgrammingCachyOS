@@ -23,25 +23,7 @@ Všimni si, že fialový ('purple') štvorec nemá určenú svoju veľkosť, ted
 
 from tkinter import Canvas, mainloop
 
-sirka = 450
-canvas = Canvas(width=450)
-canvas.pack()
-
-# def stvorce_A(retazec, vel=60):
-#     colors = retazec.split()
-#     x, y = 10, 150
-#     for farba in colors:
-#         canvas.create_rectangle(x, y, x+vel, y + vel, fill=farba)
-#         x += vel + 3
-    
-
-# stvorce_A('red blue purple red gold', 40)
-
-
-# B
-
-
-def stvorce_B(retazec, vel_predvolena=60):
+def stvorce_B(canvas, retazec, sirka, vel_predvolena=60):
     slova = retazec.split()
     x, y = 10, 100
     DIGITS = '0123456789'
@@ -65,7 +47,11 @@ def stvorce_B(retazec, vel_predvolena=60):
             
         index += 1
 
-# Volanie funkcie
-stvorce_B('40 red 20 blue purple 40 red 30 gold')
+if __name__ == "__main__":
+    sirka = 450
+    canvas = Canvas(width=sirka)
+    canvas.pack()
+    # Volanie funkcie
+    stvorce_B(canvas, '40 red 20 blue purple 40 red 30 gold', sirka)
 
-mainloop()
+    mainloop()

@@ -12,5 +12,6 @@ def vyhod_duplikaty(retazec):
             last_ = char
     return result
 
-x = vyhod_duplikaty("BBraatisssllavaaaaa")
-print(x)
+if __name__ == "__main__":
+    x = vyhod_duplikaty("BBraatisssllavaaaaa")
+    print(x)

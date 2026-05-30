@@ -8,7 +8,7 @@ zadaný súbor vráti najdlhší riadok (aj s koncovým '\n').
 def najdlhsi_riadok(meno_suboru):
     riadky = []
     najdlhsi = ""
-    with open(f"./python/InputSk-2025-2026/ZimnySemester/6/{meno_suboru}") as file:
+    with open(meno_suboru) as file:
         riadky = file.readlines()
     for riadok in riadky:
         if len(riadok) > len(najdlhsi):
@@ -16,4 +16,5 @@ def najdlhsi_riadok(meno_suboru):
     return najdlhsi
 
 
-print(najdlhsi_riadok("najdlhsi_riadok.txt"))
+if __name__ == "__main__":
+    print(najdlhsi_riadok("najdlhsi_riadok.txt"))

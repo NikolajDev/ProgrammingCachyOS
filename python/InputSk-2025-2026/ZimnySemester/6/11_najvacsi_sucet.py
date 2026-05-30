@@ -9,12 +9,13 @@ def sucet_v_retazci(retazec):
         sucet += int(val)
     return sucet
 
-print(sucet_v_retazci('52 52 6'))
+if __name__ == "__main__":
+    print(sucet_v_retazci('52 52 6'))
 
 def najvacsi_sucet(meno_suboru):
     najvacsia_suma = 0
     najvacsi_riadok = ""
-    with open(f"./python/InputSk-2025-2026/ZimnySemester/6/{meno_suboru}") as file:
+    with open(meno_suboru) as file:
         lines = file.readlines()
     for num in lines:
         if sucet_v_retazci(num) > najvacsia_suma:

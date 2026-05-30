@@ -13,13 +13,14 @@ print(open('text.txt').read(), end='')
 
 
 def prevrat(meno_suboru):
-    with open(f"./python/InputSk-2025-2026/ZimnySemester/6/{meno_suboru}") as file:
+    with open(meno_suboru) as file:
         lines = file.readlines()
     
     lines = lines[::-1]
-    with open(f"./python/InputSk-2025-2026/ZimnySemester/6/{meno_suboru}", 'w') as file:
+    with open(meno_suboru, 'w') as file:
         file.writelines(lines)
 
 
-prevrat('text.txt')
-print(open('./python/InputSk-2025-2026/ZimnySemester/6/text.txt').read(), end='')
+if __name__ == "__main__":
+    prevrat('text.txt')
+    print(open('text.txt').read(), end='')

@@ -21,4 +21,5 @@ def stvorec(n, znak):
 def stvorec(n, znak):
     return znak*n+("\n"+ znak + ((n-2)*" ") + znak) * (n-2) + "\n" + (znak * n)
 
-print(stvorec(10, '#'))
+if __name__ == "__main__":
+    print(stvorec(10, '#'))

@@ -6,7 +6,7 @@ odovzdaj Napíš funkciu vypis_do_ramiku(meno_suboru1, meno_suboru2=None), ktor�
 def vypis_do_ramiku(meno_suboru1, meno_suboru2=None):
     # Otvorenie vstupného súboru a načítanie riadkov
     # Cestu si uprav podľa potreby, v zadaní sa zvyčajne predpokladá len meno_suboru1
-    with open(f"./python/InputSk-2025-2026/ZimnySemester/6/{meno_suboru1}", 'r', encoding='utf-8') as file:
+    with open(meno_suboru1, 'r', encoding='utf-8') as file:
         lines = [line.rstrip('\n') for line in file.readlines()]
     
     # Zistenie dĺžky najdlhšieho riadka
@@ -32,8 +32,9 @@ def vypis_do_ramiku(meno_suboru1, meno_suboru2=None):
     if meno_suboru2 is None:
         print(finalny_text)
     else:
-        with open(f"./python/InputSk-2025-2026/ZimnySemester/6/{meno_suboru2}", 'w', encoding='utf-8') as out_file:
+        with open(meno_suboru2, 'w', encoding='utf-8') as out_file:
             out_file.write(finalny_text)
 
-# Test volania
-vypis_do_ramiku("najdlhsi_riadok.txt")
+if __name__ == "__main__":
+    # Test volania
+    vypis_do_ramiku("najdlhsi_riadok.txt")

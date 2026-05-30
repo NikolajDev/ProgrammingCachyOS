@@ -24,4 +24,5 @@ def sucet(retazec):
         idx += 1
     return result + int(num)
 
-print(sucet('1234'))
+if __name__ == "__main__":
+    print(sucet('1234'))

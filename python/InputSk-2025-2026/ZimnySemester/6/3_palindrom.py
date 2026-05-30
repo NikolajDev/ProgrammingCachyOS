@@ -12,5 +12,6 @@ je_palindrom('Jelenovi Pivo Nelej')
 def je_palindrom(retazec):
     return retazec.lower().replace(" ", "") == retazec.lower().replace(" ", "")[::-1]
 
-print(je_palindrom("Python"))
-print(je_palindrom('Jelenovi Pivo Nelej'))
+if __name__ == "__main__":
+    print(je_palindrom("Python"))
+    print(je_palindrom('Jelenovi Pivo Nelej'))

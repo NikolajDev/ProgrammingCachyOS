@@ -16,10 +16,11 @@ posledný riadok
 """
 
 def pridaj(meno_suboru, text):
-    with open(f"./python/InputSk-2025-2026/ZimnySemester/6/{meno_suboru}") as file:
+    with open(meno_suboru) as file:
         text_povodny = file.read()
     
-    with open(f"./python/InputSk-2025-2026/ZimnySemester/6/{meno_suboru}", 'w') as file:
-        file.writable(text + text_povodny)
+    with open(meno_suboru, 'w') as file:
+        file.write(text + text_povodny)
     
-pridaj('subor.txt', 'nový riadok\n')
+if __name__ == "__main__":
+    pridaj('subor.txt', 'nový riadok\n')
