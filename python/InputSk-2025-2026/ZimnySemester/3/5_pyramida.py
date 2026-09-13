@@ -6,6 +6,9 @@ from tkinter import Canvas, mainloop
 
 canvas = Canvas()
 canvas.pack()
+canvas.bind_all("<Escape>", lambda e: canvas.quit())
+canvas.bind_all("<q>", lambda e: canvas.quit())
+canvas.bind_all("<Q>", lambda e: canvas.quit())
 
 def pyramida(x, y):
     s1, s2, s3, s4 = 200, 150, 100, 50
