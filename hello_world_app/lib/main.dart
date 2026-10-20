@@ -1,4 +1,4 @@
-import 'package:flame/events.dart';
+import 'package:flame/game.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -42,7 +42,7 @@ class MainGameScreen extends StatelessWidget {
           // Ľavá strana: Plinko herná plocha (Flame)
           Expanded(
             flex: 2,
-            do: GameWidget(game: PlinkoWorld(gameState)),
+            child: GameWidget(game: PlinkoWorld(gameState)),
           ),
           // Pravá strana: Obchod a 4x3 mriežka
           Expanded(
@@ -76,8 +76,8 @@ class MainGameScreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         final item = gameState.grid[index];
                         return DragTarget<int>(
-                          onAccept: (fromIndex) {
-                            gameState.mergeItems(fromIndex, index);
+                          onAcceptWithDetails: (details) {
+                            gameState.mergeItems(details.data, index);
                           },
                           builder: (context, candidateData, rejectedData) {
                             if (item == null) {
@@ -134,30 +134,34 @@ class MainGameScreen extends StatelessWidget {
 // Flame Forge2D svet pre fyziku padania
 class PlinkoWorld extends Forge2DGame {
   final GameState gameState;
-  PlinkoWorld(this.gameState) : super(zoom: 20);
+  PlinkoWorld(this.gameState) : super(gravity: Vector2(0, 10));
 
   @override
   Future<void> onLoad() async {
     await super.onLoad();
-    // Pridanie gravitácie a základných objektov / prekážok
+    camera.viewfinder.zoom = 20;
     add(Ball(Vector2(0, -15), gameState));
   }
 }
 
 class Ball extends BodyComponent {
   final GameState gameState;
-  Ball(Vector2 position, this.gameState) : super();
-
-  @override
-  Body createBody() {
-    final bodyDef = BodyDef(
+  Ball(Vector2 position, this.gameState) : super(
+    bodyDef: BodyDef(
       type: BodyType.dynamic,
       position: position,
-    );
-    final shape = CircleShape()..radius = 0.8;
-    final fixtureDef = FixtureDef(shape)
-      ..density = 1.0
-      ..restitution = 0.6;
-    return world.createBody(bodyDef)..createFixture(fixtureDef);
-  }
+    ),
+    shapeSpecs: [
+      ShapeSpec(
+        Circle(radius: 0.8),
+        ShapeDef(
+          density: 1.0,
+          material: SurfaceMaterial(restitution: 0.6),
+        ),
+      ),
+    ],
+  );
+
+  @override
+  Color get defaultColor => Colors.blue;
 }
