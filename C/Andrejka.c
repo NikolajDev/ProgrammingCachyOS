@@ -1,6 +1,12 @@
 #include <stdio.h>
 
 int main(){
-  printf("%s\n", sizeof(int*));
+  printf("Hello, World!");
   return 0;
 }
+
+
+
+
+
+

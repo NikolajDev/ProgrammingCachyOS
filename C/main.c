@@ -1,68 +1,145 @@
 #include <stdio.h>
-int main (void) {
-    char prvni;
-    int n,m; //n pocet cisel m nejmensi cislo
-    scanf ("%c", &prvni);
-    if (prvni != 'v' && prvni != 'h') {
-        printf ("Neplatny mod vykresleni");
-        return 1;
-    }
-    scanf("%d%d",&n, &m);
-    int druha [10] ={0};
-    for (int i = 0; i < n; i++) {
-        int cislo;
-    if   (scanf("%d", &cislo) != 1)
-        return 1;
+#include <stdlib.h>
+#include <ctype.h>
+
+int pocet_malych(char text[]) {
+    int pocet = 0;
+
+    for (int i = 0; text[i] != '\0'; i++) {
+        if (islower(text[i])) {
+            pocet++;
+        }
     }
 
-    int indexy;
-    if (int cislo > = m && cislo < = m + 8) {index = cislo - m;
-        } else {
-            druha[9]++;
+    return pocet;
+}
+
+int pocet_velkych(char text[]) {
+  int pocet = 0;
+
+    for (int i = 0; text[i] != '\0'; i++) {
+        if (isupper(text[i])) {
+            pocet++;
+        }
+    }
+
+    return pocet;
+}
+
+int pocet_mezer(char text[]) {
+    int pocet = 0;
+
+    for (int i = 0; text[i] != '\0'; i++) {
+        if (text[i] == ' ') {
+            pocet++;
+        }
+    }
+
+    return pocet;
+}
+
+void normalizace_radku(char text[]) {
+    int i = 0;
+    int j = 0;
+
+    while (text[i] != '\0') {
+
+        while (text[i] == ' ') {
+            i++;
         }
 
-    if (prvni == 'v') {
-         for (int i = 0; i < 10; i++) {
-            if (i < 9) {
-                printf("%d ", m + i);
-            } else {
-                printf("blbe\n ");
-            }
-
-            for (int j = 0; j < druha[i]; j++) {
-                printf("#\n");
-            }
-        }
-    } else if (prvni == 'h') {
-        int nejvetsi = 0;
-
-        for (int i = 0; i < 10; i++) {
-
-        for (int i = 0; i < 10; i++) {
-            if (druha[i] > nejvetsi) {
-                nejvetsi = druha[i];
-            }
+        if (text[i] == '\0') {
+            break;
         }
 
-        for (int i = nejvetsi; i > 0; i--) {
-            for (int j = 0; j < 10; j++) {
-                if (druha[j] >= i) {
-                    printf("# ");
+        int zacatek = i;
+        int velke = 0;
+
+        while (text[i] != '\0' && text[i] != ' ') {
+            if (isupper(text[i])) {
+                velke = 1;
+            }
+            i++;
+        }
+
+        if (j > 0) {
+            text[j] = ' ';
+            j++;
+        }
+
+        char predchozi = '\0';
+        int prvni = 1;
+
+        for (int k = zacatek; k < i; k++) {
+            char znak = text[k];
+
+            if (velke == 1) {
+                if (prvni == 1) {
+                    if (islower(znak)) {
+                        znak = znak - 32;
+                    }
                 } else {
-                    printf("  ");
+                    if (isupper(znak)) {
+                        znak = znak + 32;
+                    }
+                }
+            } else {
+                if (islower(znak)) {
+                    znak = znak - 32;
                 }
             }
-            printf("\n");
-        }
-        for (int i = 0; i < 10; i++) {
-            if (i < 9) {
-                printf("%d ", m + i);
-            } else {
-                printf("blbe\n");
+
+            if (prvni == 1 || znak != predchozi) {
+                text[j] = znak;
+                j++;
             }
+
+            predchozi = znak;
+            prvni = 0;
         }
     }
-  }
+
+    text[j] = '\0';
+}
+
+int main(void) {
+    char text[51];
+    int n;
+
+    fgets(text, sizeof(text), stdin);
+    n = atoi(text);
+
+    for (int i = 0; i < n; i++) {
+        fgets(text, sizeof(text), stdin);
+
+        for (int j = 0; text[j] != '\0'; j++) {
+            if (text[j] == '\n' || text[j] == '\r') {
+                text[j] = '\0';
+                break;
+            }
+        }
+
+        int male_pred = pocet_malych(text);
+        int velke_pred = pocet_velkych(text);
+        int mezery_pred = pocet_mezer(text);
+
+        normalizace_radku(text);
+
+        int male_po = pocet_malych(text);
+        int velke_po = pocet_velkych(text);
+        int mezery_po = pocet_mezer(text);
+
+        printf("%s\n", text);
+        printf("lowercase: %d -> %d\n", male_pred, male_po);
+        printf("uppercase: %d -> %d\n", velke_pred, velke_po);
+        printf("spaces: %d -> %d\n", mezery_pred, mezery_po);
+
+        if (i < n - 1) {
+            printf("\n");
+        }
+    }
 
     return 0;
 }
+
+

@@ -1,20 +1,33 @@
+#include <ctype.h>
+#include <stddef.h>
 #include <stdio.h>
+#include <string.h>
 
-int main(int argc, char *argv[]) {
-  int val = 42;
-  int *ptr_val = &val;
-  printf("%d\n", *ptr_val);
+void kebab_to_camel(const char *src, char *dest) {
+  size_t j = 0;
 
-  // vytovrim si pole, s pointerom *p, ten
-  // mi oznacuje index na ktory ukazujem
-  // pri incializaci, zadam pole
-  // to znamena ze ukazujem na pole[0]
+  for (size_t i = 0; src[i] != '\0'; ++i) {
+    if (src[i] == '-' && i > 0 && src[i + 1] != '\0') {
+      ++i; // preskoč '-'
+      dest[j++] = (char)toupper((unsigned char)src[i]);
+    } else {
+      dest[j++] = src[i];
+    }
+  }
 
-  int pole[] = {10, 20, 30};
-  int *index = pole;
+  dest[j] = '\0';
+}
 
-  printf("%d\n", *index);
-  printf("%d\n", *(index + 1));
+int main(void) {
+  char line[128];
+  char out[128]; // výstup je vždy kratší alebo rovnako dlhý ako vstup
+
+  while (fgets(line, sizeof line, stdin) != NULL) {
+    line[strcspn(line, "\n")] = '\0'; // odstráň '\n'
+
+    kebab_to_camel(line, out);
+    printf("%s\n", out);
+  }
 
   return 0;
 }
